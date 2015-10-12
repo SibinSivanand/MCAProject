@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9a40264a66834d858f305b68203cda3b" Name="Diagram1">
+        <EntityTypeShape EntityType="EBookPortalModel.Author" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EBookPortalModel.AwardDetail" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EBookPortalModel.BookCategory" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EBookPortalModel.BookMaster" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
+        <AssociationConnector Association="EBookPortalModel.FK_AwardDetails_Author" ManuallyRouted="false" />
+        <AssociationConnector Association="EBookPortalModel.FK_BookMaster_Author" ManuallyRouted="true" >
+          <ConnectorPoint PointX="1.5" PointY="5.8648893229166656" />
+          <ConnectorPoint PointX="1.5" PointY="6.5331429036458326" />
+          <ConnectorPoint PointX="4.515" PointY="6.5331429036458326" />
+          <ConnectorPoint PointX="4.515" PointY="6.1268929036458326" />
+          <ConnectorPoint PointX="6" PointY="6.1268929036458326" />
+        </AssociationConnector>
+        <AssociationConnector Association="EBookPortalModel.FK_AwardsDetails_BookMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="EBookPortalModel.FK_BookMaster_BookCategory" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

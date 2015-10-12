@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBookPortal", "EBookPortal\EBookPortal.csproj", "{A58C2A3B-36DF-40B7-88B8-0AB15172A6BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBookPortalBusiness", "EBookPortalBusiness\EBookPortalBusiness.csproj", "{C0F9637E-4676-4260-8A88-F058FF8FFA43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A58C2A3B-36DF-40B7-88B8-0AB15172A6BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A58C2A3B-36DF-40B7-88B8-0AB15172A6BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A58C2A3B-36DF-40B7-88B8-0AB15172A6BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A58C2A3B-36DF-40B7-88B8-0AB15172A6BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0F9637E-4676-4260-8A88-F058FF8FFA43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0F9637E-4676-4260-8A88-F058FF8FFA43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0F9637E-4676-4260-8A88-F058FF8FFA43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0F9637E-4676-4260-8A88-F058FF8FFA43}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,10 @@
+D:\CollegeProject\MCAProject\EBookPortal\EBookPortalBusiness\bin\Debug\EBookPortalBusiness.dll
+D:\CollegeProject\MCAProject\EBookPortal\EBookPortalBusiness\bin\Debug\EBookPortalBusiness.pdb
+D:\CollegeProject\MCAProject\EBookPortal\EBookPortalBusiness\obj\Debug\EBookPortalBusiness.csprojResolveAssemblyReference.cache
+D:\CollegeProject\MCAProject\EBookPortal\EBookPortalBusiness\obj\Debug\EBookPortalBusiness.dll
+D:\CollegeProject\MCAProject\EBookPortal\EBookPortalBusiness\obj\Debug\EBookPortalBusiness.pdb
+D:\CollegeProject\MCAProject\EBookPortal\EBookPortalBusiness\bin\Debug\EBookPortalBusiness.dll.config
+D:\CollegeProject\MCAProject\EBookPortal\EBookPortalBusiness\bin\Debug\EntityFramework.dll
+D:\CollegeProject\MCAProject\EBookPortal\EBookPortalBusiness\bin\Debug\EntityFramework.SqlServer.dll
+D:\CollegeProject\MCAProject\EBookPortal\EBookPortalBusiness\bin\Debug\EntityFramework.xml
+D:\CollegeProject\MCAProject\EBookPortal\EBookPortalBusiness\bin\Debug\EntityFramework.SqlServer.xml

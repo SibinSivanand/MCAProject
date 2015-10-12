@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EBookPortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="AuthorId" />
+    </Key>
+    <Property Name="AuthorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AuthorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AuthorPenName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="AuthorDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AwardDetails" Relationship="Self.FK_AwardDetails_Author" FromRole="Author" ToRole="AwardDetails" />
+    <NavigationProperty Name="BookMasters" Relationship="Self.FK_BookMaster_Author" FromRole="Author" ToRole="BookMaster" />
+  </EntityType>
+  <EntityType Name="AwardDetail">
+    <Key>
+      <PropertyRef Name="AwardId" />
+    </Key>
+    <Property Name="AwardId" Type="Int32" Nullable="false" />
+    <Property Name="BookId" Type="Int32" Nullable="false" />
+    <Property Name="AuthorId" Type="Int32" Nullable="false" />
+    <Property Name="AwardName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AwardDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="AwardRecievedDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Author" Relationship="Self.FK_AwardDetails_Author" FromRole="AwardDetails" ToRole="Author" />
+    <NavigationProperty Name="BookMaster" Relationship="Self.FK_AwardsDetails_BookMaster" FromRole="AwardDetails" ToRole="BookMaster" />
+  </EntityType>
+  <EntityType Name="BookCategory">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CategoryDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BookMasters" Relationship="Self.FK_BookMaster_BookCategory" FromRole="BookCategory" ToRole="BookMaster" />
+  </EntityType>
+  <EntityType Name="BookMaster">
+    <Key>
+      <PropertyRef Name="BookId" />
+    </Key>
+    <Property Name="BookId" Type="Int32" Nullable="false" />
+    <Property Name="AuthorId" Type="Int32" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="BookTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dAuthorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BookDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PublishedDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Author" Relationship="Self.FK_BookMaster_Author" FromRole="BookMaster" ToRole="Author" />
+    <NavigationProperty Name="AwardDetails" Relationship="Self.FK_AwardsDetails_BookMaster" FromRole="BookMaster" ToRole="AwardDetails" />
+    <NavigationProperty Name="BookCategory" Relationship="Self.FK_BookMaster_BookCategory" FromRole="BookMaster" ToRole="BookCategory" />
+  </EntityType>
+  <Association Name="FK_AwardDetails_Author">
+    <End Role="Author" Type="Self.Author" Multiplicity="1" />
+    <End Role="AwardDetails" Type="Self.AwardDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="AuthorId" />
+      </Principal>
+      <Dependent Role="AwardDetails">
+        <PropertyRef Name="AuthorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BookMaster_Author">
+    <End Role="Author" Type="Self.Author" Multiplicity="1" />
+    <End Role="BookMaster" Type="Self.BookMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="AuthorId" />
+      </Principal>
+      <Dependent Role="BookMaster">
+        <PropertyRef Name="AuthorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AwardsDetails_BookMaster">
+    <End Role="BookMaster" Type="Self.BookMaster" Multiplicity="1" />
+    <End Role="AwardDetails" Type="Self.AwardDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookMaster">
+        <PropertyRef Name="BookId" />
+      </Principal>
+      <Dependent Role="AwardDetails">
+        <PropertyRef Name="BookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BookMaster_BookCategory">
+    <End Role="BookCategory" Type="Self.BookCategory" Multiplicity="1" />
+    <End Role="BookMaster" Type="Self.BookMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookCategory">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="BookMaster">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EBookPortalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Authors" EntityType="Self.Author" />
+    <EntitySet Name="AwardDetails" EntityType="Self.AwardDetail" />
+    <EntitySet Name="BookCategories" EntityType="Self.BookCategory" />
+    <EntitySet Name="BookMasters" EntityType="Self.BookMaster" />
+    <AssociationSet Name="FK_AwardDetails_Author" Association="Self.FK_AwardDetails_Author">
+      <End Role="Author" EntitySet="Authors" />
+      <End Role="AwardDetails" EntitySet="AwardDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BookMaster_Author" Association="Self.FK_BookMaster_Author">
+      <End Role="Author" EntitySet="Authors" />
+      <End Role="BookMaster" EntitySet="BookMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AwardsDetails_BookMaster" Association="Self.FK_AwardsDetails_BookMaster">
+      <End Role="BookMaster" EntitySet="BookMasters" />
+      <End Role="AwardDetails" EntitySet="AwardDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BookMaster_BookCategory" Association="Self.FK_BookMaster_BookCategory">
+      <End Role="BookCategory" EntitySet="BookCategories" />
+      <End Role="BookMaster" EntitySet="BookMasters" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
