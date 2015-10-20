@@ -26,6 +26,14 @@ namespace EBookPortal
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/ebookcustomjs").Include(
+                      "~/Scripts/CustomScripts/EBookJS.js"));
+
+            bundles.Add(new StyleBundle("~/Content/ebookcustomcss").Include(
+                      "~/Content/CustomCSS/EBookStyle.css",
+                      "~/Content/CustomCSS/BootStrap.css",
+                      "~/Content/CustomCSS/fonts.css"));
         }
     }
 }
